@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+	
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le lieu</title>
+	
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+	
+</head>
+	
+<body>
+	
+	<!-- Nav Section -->
+    <nav>
+        <div class="nav-container">
+                <img src="Images/Général/logo.png" class="logo" alt="Logo PC">
+            <ul class="nav-links">
+				<li><a href="index.html" class="nav-link">Le Gala</a></li>
+                <li><a href="ESPCI.html" class="nav-link">L'ESPCI</a></li>
+                <li><a href="Lieu.html" class="nav-link">Le lieu</a></li>
+                <li><a href="Equipe.html" class="nav-link">L'équipe</a></li>
+                <li><a href="Partenaire.html" class="nav-link">Devenir Partenaire</a></li>
+                <li><a href="Galerie.html" class="nav-link">Galerie</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Carte -->
+
+    <div id="mapid"></div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Initialisation de la carte
+        var mymap = L.map('mapid').setView([48.8414596, 2.3468101], 13); // Coordonnées pour Paris par exemple
+
+        // Ajouter une couche OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(mymap);
+
+        // Ajouter un marqueur pour l'emplacement de l'événement
+        var marker = L.marker([48.8414596, 2.3468101]).addTo(mymap); // Remplacez par les coordonnées de votre événement
+
+        // Ajouter une popup au marqueur
+        marker.bindPopup("<b>GALA de l'ESPCI</b><br>10 rue Vauquelin, 75005 Paris").openPopup();
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li><a href="https://www.espci.psl.eu/fr/" target="_blank">À propos de l'ESPCI</a></li>
+                <li><a href="https://espci.org" target="_blank">Alumni</a></li>
+				<li><a href="#" target="_blank">Mentions Légales</a></li>
+				
+            </ul>
+            <p>&copy; 2024 Association du Gala de l'École Supérieure de Physique et de Chimie Industrielles de la Ville de Paris. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
