@@ -27,6 +27,12 @@ nav {
     margin: 0;
     display: flex;
     justify-content: center; /* Aligne les éléments au centre par défaut */
+	transition: transform 0.5s ease; /* Ajoute une transition fluide */
+	
+}
+
+.nav-link:hover {
+    transform: scale(1.05); /* Zoom de 10% sur le survol */
 }
 
 .nav-links li {
