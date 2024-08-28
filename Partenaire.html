@@ -12,36 +12,64 @@
 	
 <body>
 	
-	<!-- Nav Section -->
-    <nav>
-        <div class="nav-container">
-                <img src="Images/Général/logo.png" class="logo" alt="Logo PC">
-            <ul class="nav-links">
-				<li><a href="index.html" class="nav-link">Le Gala</a></li>
-                <li><a href="ESPCI.html" class="nav-link">L'ESPCI</a></li>
-                <li><a href="Lieu.html" class="nav-link">Le lieu</a></li>
-                <li><a href="Equipe.html" class="nav-link">L'équipe</a></li>
-                <li><a href="Partenaire.html" class="nav-link">Devenir Partenaire</a></li>
-                <li><a href="Galerie.html" class="nav-link">Galerie</a></li>
-            </ul>
-        </div>
-    </nav>
+<!-- Nav Section -->
+	<nav>
+    	<div class="nav-container">
+			
+        	<img src="Images/Général/logo.png" class="logo" alt="Logo PC">
+        
+        	
+			<div class="title">Gala de l'ESPCI</div>
+			
+        	<ul class="nav-links">
+            	<li><a href="index.html" class="nav-link">Le Gala</a></li>
+            	<li><a href="ESPCI.html" class="nav-link">L'ESPCI</a></li>
+            	<li><a href="Lieu.html" class="nav-link">Le lieu</a></li>
+            	<li><a href="Equipe.html" class="nav-link">L'équipe</a></li>
+            	<li><a href="Partenaire.html" class="nav-link">Devenir Partenaire</a></li>
+            	<li><a href="Galerie.html" class="nav-link">Galerie</a></li>
+        	</ul>
+			
+			<!-- Bouton hamburger -->
+        	<div class="hamburger" onclick="toggleMenu()">
+            	&#9776;
+        	</div>
+			
+    	</div>
+	</nav>
+
+	<script>
+	function toggleMenu() {
+    var links = document.querySelector('.nav-links');
+    var title = document.querySelector('.title');
+
+    // Toggle the 'active' class on the nav-links
+    links.classList.toggle('active');
+
+
+    // If the menu is active (visible), change the title text to "Menu" and hide it
+    if (links.classList.contains('active')) {
+        title.textContent = "Menu";
+        title.style.display = "block";
+    } else {
+        // Change the title text back to the original and show it
+        title.textContent = "Gala de l'ESPCI";
+        title.style.display = "block";
+    }
+}
+    </script>
 	
+	<div class="iframe-container">
+    <iframe 
+        src="https://forms.gle/97N8pw3ZizNRzinNA" 
+        frameborder="0" 
+        allowfullscreen 
+        style="width: 100%; height: 100%; border: 0;"
+        title="Formulaire">
+    </iframe>
+</div>
 	<!-- Partnership -->
  	<section class="partnership">
-        <h2>Devenir Partenaire</h2>
-        <form class="contact-form">
-            <label for="name">Nom:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">Envoyer</button>
-        </form>
 
         <h2>Ils nous soutiennent déjà :</h2>
         <div class="partners">
@@ -52,6 +80,7 @@
   
         </div>
     </section>
+
 	
 	
     <!-- Footer -->
